@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" oncontextmenu="return false;" ng-app="app" ng-controller="main">
+<head>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SISTEMA OPERATIVO</title>
+	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	
+</head>
+
+<body>
+
+	<ol id="selectable">
+	  <li class="ui-state-default draggable">
+	  	<div id="reproductor" ng-dblclick="abrirAplicacion($event);" class="icon" onmouseover="$('#'+this.id).addClass('icon-over');" onmouseout="$('#'+this.id).removeClass('icon-over');">
+	  		<img src="imagenes/iconos/reproductor.png" alt="">
+	  		<p>Reproductor</p>
+	  	</div>
+	  	
+	  </li>
+	  <li class="ui-state-default draggable">
+	  	<div id="papelera" ng-dblclick="abrirAplicacion($event);"  class="icon" class="icon" onmouseover="$('#'+this.id).addClass('icon-over');" onmouseout="$('#'+this.id).removeClass('icon-over');">
+	  		<img src="imagenes/iconos/papelera.png" alt="">
+	  		<p>Papelera</p>
+	  	</div>
+	  </li>
+	  <li class="ui-state-default draggable">
+	  	<div id="galeria" ng-dblclick="abrirAplicacion($event);"  class="icon" onmouseover="$('#'+this.id).addClass('icon-over');" onmouseout="$('#'+this.id).removeClass('icon-over');">
+	  		<img src="imagenes/iconos/galeria.png" alt="">
+	  		<p>Galeria</p>
+	  	</div>
+	  </li>
+	  <li class="ui-state-default draggable">
+	  	<div id="documentos" ng-dblclick="abrirAplicacion($event);"  class="icon" onmouseover="$('#'+this.id).addClass('icon-over');" onmouseout="$('#'+this.id).removeClass('icon-over');">
+	  		<img src="imagenes/iconos/documentos.png" alt="">
+	  		<p>Documentos</p>
+	  	</div>
+	  </li>
+	  <li class="ui-state-default draggable">
+	  	<div id="equipo" ng-dblclick="abrirAplicacion($event);"  class="icon" onmouseover="$('#'+this.id).addClass('icon-over');" onmouseout="$('#'+this.id).removeClass('icon-over');">
+	  		<img src="imagenes/iconos/equipo.png" alt="">
+	  		<p>Equipo</p>
+	  	</div>
+	  </li>
+	  <li class="ui-state-default draggable">
+	  	<div id="calculadora" ng-dblclick="abrirAplicacion($event);"  class="icon" onmouseover="$('#'+this.id).addClass('icon-over');" onmouseout="$('#'+this.id).removeClass('icon-over');">
+	  		<img src="imagenes/iconos/calculadora.png" alt="">
+	  		<p>Calculadora</p>
+	  	</div>
+	  </li>
+	  <li class="ui-state-default draggable">
+	  	<div id="navegador" ng-dblclick="abrirAplicacion($event);"  class="icon" onmouseover="$('#'+this.id).addClass('icon-over');" onmouseout="$('#'+this.id).removeClass('icon-over');">
+	  		<img src="imagenes/iconos/navegador.png" alt="">
+	  		<p>Navegador</p>
+	  	</div>
+	  </li>
+	  <li class="ui-state-default draggable">
+	  	<div id="blocdenotas" ng-dblclick="abrirAplicacion($event);"  class="icon" onmouseover="$('#'+this.id).addClass('icon-over');" onmouseout="$('#'+this.id).removeClass('icon-over');">
+	  		<img src="imagenes/iconos/blocdenotas.png" alt="">
+	  		<p>Bloc de Notas</p>
+	  	</div>
+	  </li>
+
+	  <li class="ui-state-default draggable">
+	  	<div  id="videos" ng-dblclick="abrirAplicacion($event);" class="icon" onmouseover="$('#'+this.id).addClass('icon-over');" onmouseout="$('#'+this.id).removeClass('icon-over');">
+	  		<img src="imagenes/iconos/videos.png" alt="">
+	  		<p>Videos</p>
+	  	</div>
+	  </li>
+
+	  <li class="ui-state-default draggable">
+	  	<div id="musica" ng-dblclick="abrirAplicacion($event);" class="icon" onmouseover="$('#'+this.id).addClass('icon-over');" onmouseout="$('#'+this.id).removeClass('icon-over');">
+	  		<img src="imagenes/iconos/music.png" alt="">
+	  		<p>Musica</p>
+	  	</div>
+	  </li>
+	  
+	</ol>
+
+
+	<div id="barra">
+		<div id="inicio">
+			<img src="imagenes/iconos/inicio.png" height="40" alt="" ng-click="abrirInicio()">
+		</div>
+		<div id="apps">
+
+			<div class='app' id="t-{{n}}" ng-click="minimizarTarea($event)" ng-repeat="n in items">
+				<div class='icono'>
+					<img src='imagenes/iconos/{{n}}.png' width='35px' height='35px' alt=''>
+				</div>
+			</div>
+
+
+			
+
+			
+		
+		</div>
+		<div id="horafecha">
+			<div class="hora">
+				07:00 AM
+			</div>
+			<div class="fecha">
+				20/10/2017
+			</div>
+		</div>
+	</div>
+
+	<div id="menu">
+		<ul class="aplicaciones">
+			<li>
+				<img src="imagenes/iconos/calculadora.png" width="20" height="20" alt="">
+				<p>Calculadora</p>
+			</li>
+			
+
+			
+		</ul>
+		<ul class="ventana">
+			<li>
+				<img src="imagenes/iconos/calculadora.png" width="20" height="20" alt="">
+				<p>Calculadora</p>
+			</li>
+		</ul>
+	</div>
+
+		
+	<div id="v-reproductor" class="explorer" title="Reproductor">
+	
+	</div>
+
+	<div id="v-papelera" class="explorer" title="Pepelera">
+	  
+	</div>
+
+	<div id="v-galeria" class="explorer" title="Galeria de Fotos">
+	  
+	</div>
+
+	<div id="v-documentos" class="explorer" title="Documentos"  ng-controller="file_explorer">
+	  <ul>
+	  	<li>Documentos</li>
+	  	<li>Imagenes</li>
+	  	<li>Musica</li>
+	  	<li>Videos</li>
+
+	  </ul>
+
+	  <div id="contenido">
+	  	hola
+	  </div>
+	</div>
+
+	<div id="v-equipo" class="explorer" title="Equipo">
+	  
+	</div>
+
+	<div id="v-calculadora" class="explorer" title="Calculadora">
+	  
+	</div>
+
+	<div id="v-navegador" class="explorer" title="Navegador">
+	  
+	</div>
+
+	<div id="v-blocdenotas" class="explorer" title="Bloc de Notas">
+	  
+	</div>
+
+	<div id="v-videos" class="explorer" title="Videos">
+	  
+	</div>
+
+	<div id="v-musica" class="explorer" title="Musica">
+	  
+	</div>
+	
+	<script src="js/angular.min.js"></script>
+	<script src="js/app.js"></script>
+
+	<!-- apps -->
+	<script src="js/apps/file_explorer.js"></script>
+	<!-- /apps -->
+</body>
+	
+</html>

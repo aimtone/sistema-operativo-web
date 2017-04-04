@@ -1,4 +1,4 @@
-		var app = angular.module('app',[]);
+		var app = angular.module('app',['ngStorage']);
 
 		app.controller('main', function($rootScope,$scope) {
 
@@ -77,6 +77,8 @@
 		    		});
 		    	}
 		   	};
+
+		   	
 
 
 

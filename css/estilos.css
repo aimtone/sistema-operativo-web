@@ -307,3 +307,29 @@ body
 	background: rgba(89, 160, 188, 0.9);
 }
 
+#v-blocdenotas textarea{
+	width: 99%;
+	height: 90%;
+	overflow: hidden;
+	border:none;
+	font-family: 'Courier New', 'Consolas', 'Arial', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	outline: 0px;
+
+}
+#v-blocdenotas button{
+	width: 99%;
+	border:1px solid #ccc;
+	background: #eee;
+	color:black;
+	padding:6px;
+
+}
+
+#v-blocdenotas button:hover{
+
+	background: #ddd;
+
+
+}

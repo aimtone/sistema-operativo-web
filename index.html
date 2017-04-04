@@ -8,10 +8,30 @@
 	<link rel="stylesheet" href="css/jquery-ui.css">
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery-ui.js"></script>
+	<script>
+	        function mueveReloj(){ 
+			   	momentoActual = new Date() 
+			   	dia = momentoActual.getDate();
+			   	mes = momentoActual.getMonth();
+			   	anio = momentoActual.getFullYear();
+			   	hora = momentoActual.getHours() 
+			   	minuto = momentoActual.getMinutes() 
+			   	segundo = momentoActual.getSeconds() 
+
+			   	horaImprimible = hora + " : " + minuto + " : " + segundo 
+
+			   	document.getElementById('hora').innerHTML = horaImprimible;
+			   	document.getElementById('fecha').innerHTML = dia + "/" + mes + "/" + anio;
+
+			   	setTimeout("mueveReloj()",1000) 
+			} 
+	</script>
 	
 </head>
 
-<body>
+<body onload="mueveReloj()">
+
+
 
 	<ol id="selectable">
 	  <li class="ui-state-default draggable">
@@ -100,11 +120,9 @@
 		
 		</div>
 		<div id="horafecha">
-			<div class="hora">
-				07:00 AM
+			<div id="hora">
 			</div>
-			<div class="fecha">
-				20/10/2017
+			<div id="fecha">
 			</div>
 		</div>
 	</div>
@@ -129,7 +147,10 @@
 
 		
 	<div id="v-reproductor" class="explorer" title="Reproductor">
-	
+		<video src="videos/video.mp4" autoplay>
+		  Tu navegador no admite el elemento <code>video</code>.
+		</video>
+			
 	</div>
 
 	<div id="v-papelera" class="explorer" title="Pepelera">
@@ -141,17 +162,7 @@
 	</div>
 
 	<div id="v-documentos" class="explorer" title="Documentos"  ng-controller="file_explorer">
-	  <ul>
-	  	<li>Documentos</li>
-	  	<li>Imagenes</li>
-	  	<li>Musica</li>
-	  	<li>Videos</li>
 
-	  </ul>
-
-	  <div id="contenido">
-	  	hola
-	  </div>
 	</div>
 
 	<div id="v-equipo" class="explorer" title="Equipo">
@@ -166,7 +177,10 @@
 	  
 	</div>
 
-	<div id="v-blocdenotas" class="explorer" title="Bloc de Notas">
+	<div id="v-blocdenotas" class="explorer" title="Bloc de Notas" ng-controller="blocdenotas">
+		<textarea name="nota" ng-model="datos.nota" ng-value="datos.nota" id="" cols="30" rows="10">{{datos}}</textarea>
+		<button ng-click="guardarNota();">Guardar nota</button>
+		{{info}}
 	  
 	</div>
 
@@ -179,10 +193,12 @@
 	</div>
 	
 	<script src="js/angular.min.js"></script>
+	<script src="js/angular-storage.min.js"></script>
 	<script src="js/app.js"></script>
 
 	<!-- apps -->
 	<script src="js/apps/file_explorer.js"></script>
+	<script src="js/apps/bloc_de_notas.js"></script>
 	<!-- /apps -->
 </body>
 	

@@ -6,8 +6,10 @@
 	<title>SISTEMA OPERATIVO</title>
 	<link rel="stylesheet" href="css/estilos.css">
 	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" href="css/lightbox.css">
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery-ui.js"></script>
+	<script src="js/lightbox.js"></script>
 	<script>
 	        function mueveReloj(){ 
 			   	momentoActual = new Date() 
@@ -93,7 +95,7 @@
 
 	  <li class="ui-state-default draggable">
 	  	<div id="musica" ng-dblclick="abrirAplicacion($event);" class="icon" onmouseover="$('#'+this.id).addClass('icon-over');" onmouseout="$('#'+this.id).removeClass('icon-over');">
-	  		<img src="imagenes/iconos/music.png" alt="">
+	  		<img src="imagenes/iconos/musica.png" alt="">
 	  		<p>Musica</p>
 	  	</div>
 	  </li>
@@ -147,7 +149,7 @@
 
 		
 	<div id="v-reproductor" class="explorer" title="Reproductor">
-		<video src="videos/video.mp4" autoplay>
+		<video src="videos/video.mp4" controls autoplay>
 		  Tu navegador no admite el elemento <code>video</code>.
 		</video>
 			
@@ -158,7 +160,10 @@
 	</div>
 
 	<div id="v-galeria" class="explorer" title="Galeria de Fotos">
-	  
+	<a href="imagenes/iconos/calculadora.png" data-lightbox="roadtrip"><img src="imagenes/iconos/calculadora.png" alt=""></a>
+	<a href="imagenes/iconos/blocdenotas.png" data-lightbox="roadtrip"><img src="imagenes/iconos/blocdenotas.png" alt=""></a>
+	<a href="imagenes/iconos/galeria.png" data-lightbox="roadtrip"><img src="imagenes/iconos/galeria.png" alt=""></a>
+	
 	</div>
 
 	<div id="v-documentos" class="explorer" title="Documentos"  ng-controller="file_explorer">
@@ -189,7 +194,7 @@
 	</div>
 
 	<div id="v-musica" class="explorer" title="Musica">
-	  
+	  <audio src="musicas/musica.mp3" controls></audio>
 	</div>
 	
 	<script src="js/angular.min.js"></script>

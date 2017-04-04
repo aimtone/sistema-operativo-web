@@ -296,10 +296,20 @@ body
 	overflow: hidden;
 	background:black;
 }
+
+#v-musica {
+	overflow: hidden;
+	background:black;
+}
+
+
 #v-reproductor video {
 	width:100%;
 	height:100%;
 
+}
+#v-musica audio {
+	width:100%;
 }
 
 .icon-over 
